@@ -15,3 +15,11 @@ provider "oci" {
   private_key_path = var.private_key_path
 }
 
+data "oci_identity_availability_domains" "ads_1" {
+  #Required
+  compartment_id = var.tenancy_ocid
+}
+
+output "show-ads" {
+  value = data.oci_identity_availability_domains.ads_1
+}
