@@ -26,27 +26,3 @@ resource "oci_core_network_security_group" "http_sg" {
   vcn_id         = oci_core_vcn.wind-is_vcn.id
   display_name   = var.http_sg_name
 }
-
-# resource "oci_core_network_security_group_security_rule" "http_sg_rule" {
-#   network_security_group_id = oci_core_network_security_group.http_sg.id
-#   direction                 = "INGRESS"
-#   protocol                  = "6"
-#   #   source = {
-#   #     # Specify the allowed source CIDR block for incoming traffic
-#   #     cidr_block = "0.0.0.0/0" # Allow traffic from any source (this is an example, please adjust as needed)
-#   #   }
-#   tcp_options {
-
-#     #Optional
-#     destination_port_range {
-#       #Required
-#       max = "80"
-#       min = "80"
-#     }
-#     source_port_range {
-#       #Required
-#       max = "80"
-#       min = "80"
-#     }
-#   }
-# }
